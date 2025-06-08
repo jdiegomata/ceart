@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mi Sitio Web</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* Estilos generales */
+    body {
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        color: #333;
+
+        
+    }
+
+    
+
+    /* Encabezado */
+    header {
+        background-color: #002538;
+        color: #fff;
+        text-align: center;
+        padding: 1rem 0;
+        position: relative;
+    }
+     header {
+    background-color: #002538;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0 0 0; /* Padding solo arriba */
+    margin: 0; /* Sin márgenes */
+}
+
+/* LÍNEA VERDE (como separador) */
+.linea-verde {
+    width: 100%;
+    height: 10px;
+    background-color: #008000;
+}
+
+/* MENÚ (pegado inmediatamente después de la línea) */
+nav {
+    background-color: rgba(0, 0, 0, 0.3); /* Fondo transparente */
+    width: 100%;
+    padding: 0.8rem 0;
+    margin: 0; /* Sin márgenes */
+}
+
+/* CARRUSEL (pegado al menú) */
+.carousel {
+    margin-top: 0; /* Sin espacio arriba */
+}
+
+/* Elimina cualquier espacio residual */
+body {
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+    .linea-verde {
+        width: 100%;
+        height: 10px;
+        background-color: #008000;
+    }
+
+    /* Menú principal (transparente como lo querías) */
+    nav {
+        background-color: rgba(0, 0, 0, 0.3);
+        padding: 0.8rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        transition: all 0.3s ease;
+    }
+
+    nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    nav ul li {
+        margin: 0 1rem;
+    }
+
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 0.5rem 0;
+        position: relative;
+        transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+        color: #00ff00;
+    }
+
+    nav ul li a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #00ff00;
+        transition: width 0.3s;
+    }
+
+    nav ul li a:hover::after {
+        width: 100%;
+    }
+
+    /* Carrusel */
+    .carousel {
+        position: relative;
+        width: 100%;
+        height: 50vh;
+        overflow: hidden;
+    }
+
+    .carousel-img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+        z-index: 0;
+    }
+
+    .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2rem;
+        color: #fff;
+        background-color: rgba(0,0,0,0.5);
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 2;
+        transition: all 0.3s;
+        user-select: none;
+    }
+
+    .arrow:hover {
+        background-color: rgba(0,0,0,0.8);
+        color: #00ff00;
+    }
+
+    .prev {
+        left: 20px;
+    }
+
+    .next {
+        right: 20px;
+    }
+
+    /* Secciones de contenido */
+    section {
+        padding: 2rem;
+        margin: 2rem auto;
+        max-width: 1200px;
+        border-radius: 8px;
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+        color: #0e0e0e;
+        border-bottom: 2px solid #000000;
+        text-align: center;
+        padding-bottom: 0.5rem;
+        margin-top: 0;
+    }
+
+    button{
+        background-color: #060935;
+        color: #fff;      
+    }
+
+    /* Pie de página */
+    footer {
+        background-color: #002538;
+        color: #fff;
+        text-align: center;
+        padding: 2rem;
+        margin-top: 2rem;
+    }
+
+    footer p {
+        margin: 0.5rem 0;
+    }
+
+    /* Responsividad */
+    @media (max-width: 768px) {
+        nav ul li {
+            margin: 0 0.5rem;
+        }
+
+        .carousel {
+            height: 40vh;
+        }
+
+        section {
+            padding: 1.5rem;
+            margin: 1.5rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        nav ul {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin: 0.3rem 0;
+        }
+
+        .carousel {
+            height: 30vh;
+        }
+
+        .arrow {
+            width: 30px;
+            height: 30px;
+            font-size: 1.5rem;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+    
+
+  <header>
+    <img src="encabezado.png" width="1300">
+    <h1>CEARTSLP</h1>
+    <div class="linea-verde"></div>
+</header>
+<nav>
+  <ul>
+      <li><a href="Prueba.html">El CEART</a></li>
+      <li><a href="educacion_inicio.html">Educación</a></li>
+      <li><a href="actividades.html">Actividades</a></li>
+      <li><a href="museos\Prueba.html">Museos</a></li>
+      <li><a href="Teatro.html">Teatro Polivalente</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#"><i class="fas fa-search"></i> BUSCAR</a></li>
+  </ul>
+</nav>
+  <div class="subheader"></div>
+
+ 
+
+  <main>
+
+    <div class="titulo-con-boton">
+        <h2>TEATRO POLIVALENTE</h2>
+        
+      </div>
+
+      <div style="text-align: center;">
+        <img src="Teatro.PNG" alt="Descripción" width="90%" height="250"/>
+      </div>
+
+      <p style="text-align: center;">
+        <strong><br>Inaugurado el 27 de agosto de 2008, el Centro de las Artes
+        de San Luis Potosí forma parte de la Red Nacional de Centros <br> de las Artes, conformada por siete Centros de Formación y Producción Artística, y trece Centros de las Artes. El
+        <br> inmueble en donde se sitúa el CEART fue utilizado desde su origen (1904), hasta el mes de marzo de 1999, como
+        <br>centro penitenciario; la construcción se apega al modelo panóptico de arquitectura carcelaria (con vigilancia total
+         <br>desde un solo punto), ideada por el filósofo Jeremy Bentham. <br> <br></strong>
+      </p>
+
+      <h2 style="text-align: center;"> <br><br>NOSOTROS </h2>
+<section>
+      <div class="contenedor">
+        <div class="recuadro">
+          <h2 class="titulo-contenedor"> MISIÓN</h2>
+          <p>El CEART es una institución dedicada a la educación,
+            producción y divulgación de las artes. Su propósito
+            principal es fortalecer, ampliar y actualizar el campo
+            educativo a través de modelos integrales, con especial
+            énfasis en las manifestaciones artísticas actuales. Su
+            proyecto académico contempla, como uno de los fines
+            más importantes, la integración de las artes, humanidades y 
+            tecnologías, mediante esquemas multi e interdisciplinarios.</p>
+        </div>
+    </section>
+    <section>
+        <div class="recuadro">
+          <h2 class="titulo-contenedor">VISIÓN</h2>
+          <p>Ser un centro de educación artística que impulse el
+            desarrollo de la formación en las artes, así como la
+            especialización y actualización de profesionales de las
+            artes del ámbito local y regional, a partir de un modelo
+            innovador, de su carácter interdisciplinario, las condiciones 
+            actuales de la práctica profesional, y de su integración en la vida social y comunitaria.</p>
+        </div>
+      </div>
+    </section>
+      <section>
+      <div class="galeria">
+        <h2 class="titulo-agenda">Agenda</h2>
+        <p class="texto-agenda">Inaugurado el 27 de agosto de 2008, el Centro de las Artes de San Luis Potosí forma parte de la Red Nacional de Centros
+            de las Artes, conformada por siete Centros de Formación y Producción Artística, y trece Centros de las Artes. El inmueble
+            en donde se sitúa el CEART fue utilizado desde su origen (1904), hasta el mes de marzo de 1999, como centro penitencia</p>
+        <img src="imagenAgenda.jpg" alt="Imagen 1">
+        <img src="" alt="Imagen 2">
+        <img src="" alt="Imagen 3">
+        <img src="" alt="Imagen 4">
+        <img src="" alt="Imagen 5">
+        <img src="" alt="Imagen 6">
+        <img src="" alt="Imagen 7">
+        <img src="" alt="Imagen 8">
+      </div>
+      
+    </section>
+  </main>
+
+  <script>
+    const header = document.querySelector('header');
+    const menu = document.querySelector('.menu-table');
+  
+    window.addEventListener('scroll', function () {
+      const headerBottom = header.offsetHeight;
+      if (window.scrollY >= headerBottom) {
+        menu.classList.add('scrolled');
+      } else {
+        menu.classList.remove('scrolled');
+      }
+    });
+  </script>
+
+<!-- Pie de página -->
+<footer style="background-color: #002538; color: white; padding: 2rem 1rem;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 2rem;">
+
+        <!-- Izquierda: Logo y dirección -->
+        <div style="flex: 1; min-width: 250px;">
+            <img src="logo.jpg" alt="Logo CEARTSLP" style="height: 40px;">
+            <p style="margin: 0.5rem 0;"><i class="fas fa-map-marker-alt"></i> Calzada de Guadalupe 705</p>
+            <p style="margin: 0.5rem 0;">Colonia Julián Carrillo, San Luis Potosí, S.L.P</p>
+            <p style="margin: 0.5rem 0;"><i class="fas fa-phone"></i> 444 137 41 00</p>
+        </div>
+
+        <!-- Centro: Enlaces -->
+        <div style="flex: 1; min-width: 250px; text-align: center;">
+            <a href="#" style="color: white; margin: 0 0.5rem;">Aviso de Privacidad</a> |
+            <a href="#" style="color: white; margin: 0 0.5rem;">Transparencia</a> |
+            <a href="#" style="color: white; margin: 0 0.5rem;">Plataforma Nacional de Transparencia</a>
+        </div>
+
+        <!-- Derecha: Botón prensa y enlaces -->
+        <div style="flex: 1; min-width: 250px; text-align: right;">
+            <button style="background-color: white; color: #002538; border: none; padding: 0.3rem 0.8rem; font-weight: bold;">Prensa</button>
+            <p style="margin: 0.5rem 0;">Obligaciones 2022</p>
+            <p style="margin: 0.5rem 0;">Obligaciones 2023</p>
+            <p style="margin: 0.5rem 0;">Obligaciones 2024</p>
+            <p style="margin: 0.5rem 0; font-weight: bold;">CONTABILIDAD GUBERNAMENTAL</p>
+        </div>
+    </div>
+
+    <!-- Línea separadora -->
+    <hr style="margin: 2rem 0; border-color: #ccc;">
+
+    <!-- Redes sociales -->
+    <div style="text-align: left; display: flex; gap: 1rem; align-items: center;">
+        <a href="https://www.facebook.com/centrodelasartesslp" style="color: white;"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://x.com/CEARTSLP?t=otgBDAtdP4kz84egwV0cIQ&s=08" style="color: white;"><i class="fab fa-twitter"></i></a>
+        <a href="https://youtube.com/@centroartesslp?si=-kg-VfVMv4uSvm1i" style="color: white;"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/ceart_sanluis?igsh=MWs2cnZtNjBjZHdqMA==" style="color: white;"><i class="fab fa-instagram"></i></a>
+    </div>
+
+    <!-- Copyright -->
+    <p style="text-align: right; margin-top: 1rem;">©2024 Ceart S.L.P.</p>
+</footer>
+
+</body>
+</html>

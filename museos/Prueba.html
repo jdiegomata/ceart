@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>CEARTSLP</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #002538;
+      color: #fff;
+      text-align: center;
+      padding: 0.5rem 0;
+      margin: 0;
+    }
+
+    .linea-verde {
+      width: 100%;
+      height: 10px;
+      background-color: #008000;
+    }
+
+    nav {
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 0.5rem 0;
+      margin: 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(5px);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      position: relative;
+      margin: 0 1.2rem;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem;
+      display: inline-block;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #00ff00;
+    }
+
+    nav ul li .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 5px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      z-index: 1001;
+      min-width: 220px;
+    }
+
+    nav ul li:hover .dropdown {
+      display: block;
+    }
+
+    nav ul li .dropdown li {
+      margin: 0;
+    }
+
+    nav ul li .dropdown li a {
+      padding: 0.5rem 1rem;
+      display: block;
+      white-space: nowrap;
+    }
+
+    nav ul li .dropdown li a:hover {
+      background-color: #00ff00;
+      color: #002538;
+    }
+
+    .carousel {
+      width: 100%;
+      height: 50vh;
+      background-color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .carousel img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+    }
+
+    section {
+      background-color: #fff;
+      padding: 2rem;
+      margin: 1rem auto;
+      max-width: 900px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="..\encabezado.png" width="1300">
+    <h1>CEARTSLP </h1>
+    <div class="linea-verde"></div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="..\Prueba.html">El CEART</a></li>
+      <li><a href="..\educacion_inicio.html">Educación</a></li>
+      <li><a href="..\actividades.html">Actividades</a></li>
+      <li>
+        <a href="#">Museos</a>
+        <ul class="dropdown">
+          <li><a href="#museo-slp">Museo Leonora Carrington SLP</a></li>
+          <li><a href="#museo-xilitla">Museo Leonora Carrington Xilitla</a></li>
+        </ul>
+      </li>
+      <li><a href="..\Teatro.html">Teatro Polivalente</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#"><i class="fas fa-search"></i> BUSCAR</a></li>
+    </ul>
+  </nav>
+
+  <div class="carousel">
+    <img src="..\p1.png" alt="Imagen 1" />
+  </div>
+
+
+
+  <section id="museo-slp" style="text-align: center; padding: 2rem;">
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+        <h2 style="color: #002538; flex: 1; text-align: left;">Museo Leonora Carrington San Luis</h2>
+        <button style="background-color: #002538; color: white; padding: 0.5rem 1rem; border: none; border-radius: 5px; cursor: pointer;">
+            Entradas
+        </button>
+    </div>
+
+    <!-- Aquí agregas tu imagen después -->
+    <div style="margin-top: 1rem;">
+        <img src="..\Teatro.PNG" alt="Museo Leonora Carrington SLP" style="max-width: 100%; border-radius: 10px;">
+    </div>
+
+    <!-- Historia -->
+    <h3 style="color: #002538; margin-top: 2rem;">Historia</h3>
+    <p style="max-width: 800px; margin: 0 auto;">
+        Este museo está ubicado en el Centro de las Artes de San Luis Potosí. Presenta exposiciones permanentes y temporales
+        dedicadas a la artista surrealista Leonora Carrington. Además, cuenta con una tienda, espacios de talleres y diversas actividades culturales.
+    </p>
+
+    <!-- Nosotros -->
+<h3 style="color: #002538; margin-top: 2rem;">Nosotros</h3>
+<div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 1rem;">
+  <div style="flex: 1; min-width: 250px; background-color: #f2f2f2; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+    <h4 style="color: #002538;">Misión</h4>
+    <p>
+      Promover el arte surrealista a través de la obra de Leonora Carrington, acercando la cultura a todo tipo de público.
+    </p>
+  </div>
+  <div style="flex: 1; min-width: 250px; background-color: #f2f2f2; padding: 1rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+    <h4 style="color: #002538;">Visión</h4>
+    <p>
+      Ser un referente nacional e internacional en la difusión del arte surrealista, enriqueciendo la vida cultural de San Luis Potosí.
+    </p>
+  </div>
+</div>
+<!-- Sección gris para AGENDA -->
+<div style="background-color: #f4f4f4; padding: 2rem; margin-top: 3rem;">
+  <h3 style="color: #002538; text-align: center;">AGENDA</h3>
+  <p style="text-align: center; max-width: 800px; margin: 1rem auto;">
+    Inaugurado el 27 de agosto de 2008, el Centro de las Artes de San Luis Potosí forma parte de la Red Nacional de Centros de las Artes, conformada por siete Centros de Formación y Producción Artística, y trece Centros de las Artes. El inmueble en donde se sitúa el CEART fue utilizado desde su origen (1904), hasta el mes de marzo de 1999, como centro penitenciario.
+  </p>
+
+  <!-- Galería -->
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; max-width: 900px; margin: 2rem auto;">
+    <img src="ruta/imagen1.jpg" style="width: 100%; border-radius: 8px;" alt="Imagen 1">
+    <img src="ruta/imagen2.jpg" style="width: 100%; border-radius: 8px;" alt="Imagen 2">
+    <img src="ruta/imagen3.jpg" style="width: 100%; border-radius: 8px;" alt="Imagen 3">
+    <img src="ruta/imagen4.jpg" style="width: 100%; border-radius: 8px;" alt="Imagen 4">
+    <img src="ruta/imagen5.jpg" style="width: 100%; border-radius: 8px;" alt="Imagen 5">
+    <img src="ruta/imagen6.jpg" style="width: 100%; border-radius: 8px;" alt="Imagen 6">
+    <img src="ruta/imagen7.jpg" style="width: 100%; border-radius: 8px;" alt="Imagen 7">
+    <img src="ruta/imagen8.jpg" style="width: 100%; border-radius: 8px;" alt="Imagen 8">
+  </div>
+</div>
+
+<!-- Sección blanca para SERVICIOS -->
+<div style="background-color: white; padding: 2rem;">
+  <h3 style="color: #002538; text-align: center;">SERVICIOS</h3>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 3rem; margin-top: 2rem; text-align: center;">
+    <!-- Horarios -->
+    <div style="flex: 1; min-width: 200px;">
+      <div style="font-size: 32px; color: #002538; margin-bottom: 0.5rem;">🕒</div>
+      <h4>Horarios</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh.</p>
+    </div>
+    <!-- Tienda -->
+    <div style="flex: 1; min-width: 200px;">
+      <div style="font-size: 32px; color: #002538; margin-bottom: 0.5rem;">🛍️</div>
+      <h4>Tienda</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh.</p>
+    </div>
+    <!-- Visitas guiadas -->
+    <div style="flex: 1; min-width: 200px;">
+      <div style="font-size: 32px; color: #002538; margin-bottom: 0.5rem;">🧑‍🏫</div>
+      <h4>Visitas guiadas</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh.</p>
+    </div>
+  </div>
+</div>
+<!--EXPOSICIONESSS-->
+<div class="container" style="background-color: #f4f6f7; padding: 60px 0;">
+  <h2 class="text-center text-uppercase fw-bold mb-4">Exposiciones</h2>
+  <p class="text-center mb-5">
+    Inaugurado el 27 de agosto de 2008, el Centro de las Artes de San Luis Potosí forma parte de la Red Nacional de Centros de las Artes, conformada por siete Centros de Formación y Producción Artística, y trece Centros de las Artes. El inmueble en donde se sitúa el CEART fue utilizado desde su origen (1904), hasta el mes de marzo de 1999, como centro penitenciario; la construcción se apega al modelo panóptico de arquitectura carcelaria (con vigilancia total desde un solo punto), ideada por el filósofo Jeremy Bentham.
+  </p>
+
+  <!-- Exposición 1 -->
+  <div class="row align-items-center mb-5">
+    <div class="col-md-4">
+      <img src="C:\Users\Alejandra\Desktop\CEART\E1.jpeg" class="img-fluid rounded shadow-sm" alt="Exposición 1">
+    </div>
+    <div class="col-md-8">
+      <h5 class="fw-bold">Texturas de la vida</h5>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+    </div>
+  </div>
+
+  <!-- Exposición 2 -->
+  <div class="row align-items-center mb-5">
+    <div class="col-md-4">
+      <img src="ruta-de-tu-imagen-2.jpg" class="img-fluid rounded shadow-sm" alt="Exposición 2">
+    </div>
+    <div class="col-md-8">
+      <h5 class="fw-bold">Texturas de la vida</h5>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+    </div>
+  </div>
+
+  <!-- Íconos -->
+  <div class="row text-center mb-5">
+    <div class="col-md-4">
+      <i class="bi bi-clock" style="font-size: 2rem;"></i>
+      <h6 class="fw-bold mt-2">Horarios</h6>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh</p>
+    </div>
+    <div class="col-md-4">
+      <i class="bi bi-geo-alt" style="font-size: 2rem;"></i>
+      <h6 class="fw-bold mt-2">Indicaciones</h6>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh</p>
+    </div>
+    <div class="col-md-4">
+      <i class="bi bi-people" style="font-size: 2rem;"></i>
+      <h6 class="fw-bold mt-2">Visitas guiadas</h6>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh</p>
+    </div>
+  </div>
+
+  <!-- Botones -->
+  <div class="row justify-content-center">
+    <div class="col-md-4 mb-3">
+      <button class="btn btn-dark w-100 fw-bold">Tu evento en el Ceart</button>
+    </div>
+    <div class="col-md-4 mb-3">
+      <button class="btn btn-dark w-100 fw-bold">Convocatorias</button>
+    </div>
+  </div>
+</div>
+
+
+
+        
+</section>
+
+
+
+  <section id="museo-xilitla">
+    <h2>Museo Leonora Carrington Xilitla</h2>
+    <p>Situado en el corazón de la Huasteca, este museo ofrece una experiencia artística única con obras, esculturas y eventos relacionados al surrealismo y la vida de Leonora Carrington.</p>
+  </section>
+
+  <section id="teatro">
+    <h2>Teatro Polivalente</h2>
+    <p>Historia, Agenda, Galería.</p>
+  </section>
+
+  <section id="servicios">
+    <h2>Servicios</h2>
+    <p>Prepara tu visita, Experiencias Guiadas, Tu evento en el CEART.</p>
+  </section>
+
+  <section id="buscar">
+    <h2>Buscar</h2>
+    <p>Aquí podrás realizar búsquedas dentro del sitio.</p>
+  </section>
+
+ <!-- Pie de página -->
+ <footer style="background-color: #002538; color: white; padding: 2rem 1rem;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 2rem;">
+
+      <!-- Izquierda: Logo y dirección -->
+      <div style="flex: 1; min-width: 250px;">
+          <img src="C:\Users\Oscar\Desktop\Proyecto\logo.jpg" alt="Logo CEARTSLP" style="height: 40px;">
+          <p style="margin: 0.5rem 0;"><i class="fas fa-map-marker-alt"></i> Calzada de Guadalupe 705</p>
+          <p style="margin: 0.5rem 0;">Colonia Julián Carrillo, San Luis Potosí, S.L.P</p>
+          <p style="margin: 0.5rem 0;"><i class="fas fa-phone"></i> 444 137 41 00</p>
+      </div>
+
+      <!-- Centro: Enlaces -->
+      <div style="flex: 1; min-width: 250px; text-align: center;">
+          <a href="#" style="color: white; margin: 0 0.5rem;">Aviso de Privacidad</a> |
+          <a href="#" style="color: white; margin: 0 0.5rem;">Transparencia</a> |
+          <a href="#" style="color: white; margin: 0 0.5rem;">Plataforma Nacional de Transparencia</a>
+      </div>
+
+      <!-- Derecha: Botón prensa y enlaces -->
+      <div style="flex: 1; min-width: 250px; text-align: right;">
+          <button style="background-color: white; color: #002538; border: none; padding: 0.3rem 0.8rem; font-weight: bold;">Prensa</button>
+          <p style="margin: 0.5rem 0;">Obligaciones 2022</p>
+          <p style="margin: 0.5rem 0;">Obligaciones 2023</p>
+          <p style="margin: 0.5rem 0;">Obligaciones 2024</p>
+          <p style="margin: 0.5rem 0; font-weight: bold;">CONTABILIDAD GUBERNAMENTAL</p>
+      </div>
+  </div>
+
+  <!-- Línea separadora -->
+  <hr style="margin: 2rem 0; border-color: #ccc;">
+
+  <!-- Redes sociales -->
+  <div style="text-align: left; display: flex; gap: 1rem; align-items: center;">
+      <a href="https://www.facebook.com/centrodelasartesslp" style="color: white;"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://x.com/CEARTSLP?t=otgBDAtdP4kz84egwV0cIQ&s=08" style="color: white;"><i class="fab fa-twitter"></i></a>
+      <a href="https://youtube.com/@centroartesslp?si=-kg-VfVMv4uSvm1i" style="color: white;"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.instagram.com/ceart_sanluis?igsh=MWs2cnZtNjBjZHdqMA==" style="color: white;"><i class="fab fa-instagram"></i></a>
+  </div>
+
+  <!-- Copyright -->
+  <p style="text-align: right; margin-top: 1rem;">©2024 Ceart S.L.P.</p>
+</footer>
+</body>
+</html>

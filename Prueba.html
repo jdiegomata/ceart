@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEARTSLP</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>CEARTSLP</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+
+            
+        }
+
+        
+
+        /* Encabezado */
+        header {
+            background-color: #002538;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            position: relative;
+        }
+         header {
+        background-color: #002538;
+        color: #fff;
+        text-align: center;
+        padding: 1rem 0 0 0; /* Padding solo arriba */
+        margin: 0; /* Sin márgenes */
+    }
+
+    /* LÍNEA VERDE (como separador) */
+    .linea-verde {
+        width: 100%;
+        height: 10px;
+        background-color: #008000;
+    }
+
+    /* MENÚ (pegado inmediatamente después de la línea) */
+    nav {
+        background-color: rgba(0, 0, 0, 0.3); /* Fondo transparente */
+        width: 100%;
+        padding: 0.8rem 0;
+        margin: 0; /* Sin márgenes */
+    }
+
+    /* CARRUSEL (pegado al menú) */
+    .carousel {
+        margin-top: 0; /* Sin espacio arriba */
+    }
+
+    /* Elimina cualquier espacio residual */
+    body {
+        margin: 0;
+        padding: 0;
+        
+    }
+    
+
+        .linea-verde {
+            width: 100%;
+            height: 10px;
+            background-color: #008000;
+        }
+
+        /* Menú principal (transparente como lo querías) */
+        nav {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 0.8rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #00ff00;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #00ff00;
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Carrusel */
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 50vh;
+            overflow: hidden;
+        }
+
+        .carousel-img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            z-index: 0;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: #fff;
+            background-color: rgba(0,0,0,0.5);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 2;
+            transition: all 0.3s;
+            user-select: none;
+        }
+
+        .arrow:hover {
+            background-color: rgba(0,0,0,0.8);
+            color: #00ff00;
+        }
+
+        .prev {
+            left: 20px;
+        }
+
+        .next {
+            right: 20px;
+        }
+
+        /* Secciones de contenido */
+        section {
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 1200px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #002538;
+            border-bottom: 2px solid #008000;
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: #002538;
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            nav ul li {
+                margin: 0 0.5rem;
+            }
+
+            .carousel {
+                height: 40vh;
+            }
+
+            section {
+                padding: 1.5rem;
+                margin: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 0.3rem 0;
+            }
+
+            .carousel {
+                height: 30vh;
+            }
+
+            .arrow {
+                width: 30px;
+                height: 30px;
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="encabezado.png" width="1300">
+        <h1>CEARTSLP</h1>
+        <div class="linea-verde"></div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="Prueba.html">El CEART</a></li>
+            <li><a href="educacion_inicio.html">Educación</a></li>
+            <li><a href="actividades.html">Actividades</a></li>
+            <li><a href="museos\Prueba.html">Museos</a></li>
+            <li><a href="Teatro.html">Teatro Polivalente</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#"><i class="fas fa-search"></i> BUSCAR</a></li>
+        </ul>
+    </nav>
+
+    <div class="carousel">
+        <!-- Imágenes del carrusel -->
+        <img src="p2.webp" alt="Imagen 1" class="carousel-img">
+        <img src="p1.webp" alt="Imagen 2" class="carousel-img">
+        <img src="p3.webp" alt="Imagen 2" class="carousel-img">
+
+        <!-- Flechas de navegación -->
+        <span class="arrow prev" onclick="changeImage(-1)">&#10094;</span>
+        <span class="arrow next" onclick="changeImage(1)">&#10095;</span>
+    </div>
+
+    <section id="el-ceart">
+        <h2>El CEART</h2>
+        <p>Historia, Nosotros (misión, visión), directorio, galería de fotos.</p>
+    </section>
+
+    <section id="educacion">
+        <h2>Educación</h2>
+        <p>Áreas Académicas, Cursos y Talleres, Servicio Social, Biblioteca, Convocatorias.</p>
+    </section>
+
+    <section id="actividades">
+        <h2>Actividades</h2>
+        <p>Agenda mensual, Exposiciones, Eventos Especiales.</p>
+    </section>
+
+    <section id="museos">
+        <h2>Museos Leonora Carrington</h2>
+        <p>SLP y Xilitla, Historia, Agenda, Tienda del museo, Acervo permanente, Exposiciones temporales.</p>
+    </section>
+
+    <section id="teatro">
+        <h2>Teatro Polivalente</h2>
+        <p>Historia, Agenda, Galería.</p>
+    </section>
+
+    <section id="servicios">
+        <h2>Servicios</h2>
+        <p>Prepara tu visita, Experiencias Guiadas, Tu evento en el CEART.</p>
+    </section>
+
+    <section id="buscar">
+        <h2>Buscar</h2>
+        <p>Aquí podrás realizar búsquedas dentro del sitio.</p>
+    </section>
+
+    <footer style="background-color: #002538; color: white; padding: 2rem 1rem;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 2rem;">
+      
+            <!-- Izquierda: Logo y dirección -->
+            <div style="flex: 1; min-width: 250px;">
+                <img src="logo.jpg" alt="Logo CEARTSLP" style="height: 40px;">
+                <p style="margin: 0.5rem 0;"><i class="fas fa-map-marker-alt"></i> Calzada de Guadalupe 705</p>
+                <p style="margin: 0.5rem 0;">Colonia Julián Carrillo, San Luis Potosí, S.L.P</p>
+                <p style="margin: 0.5rem 0;"><i class="fas fa-phone"></i> 444 137 41 00</p>
+            </div>
+      
+            <!-- Centro: Enlaces -->
+            <div style="flex: 1; min-width: 250px; text-align: center;">
+                <a href="#" style="color: white; margin: 0 0.5rem;">Aviso de Privacidad</a> |
+                <a href="#" style="color: white; margin: 0 0.5rem;">Transparencia</a> |
+                <a href="#" style="color: white; margin: 0 0.5rem;">Plataforma Nacional de Transparencia</a>
+            </div>
+      
+            <!-- Derecha: Botón prensa y enlaces -->
+            <div style="flex: 1; min-width: 250px; text-align: right;">
+                <button style="background-color: white; color: #002538; border: none; padding: 0.3rem 0.8rem; font-weight: bold;">Prensa</button>
+                <p style="margin: 0.5rem 0;">Obligaciones 2022</p>
+                <p style="margin: 0.5rem 0;">Obligaciones 2023</p>
+                <p style="margin: 0.5rem 0;">Obligaciones 2024</p>
+                <p style="margin: 0.5rem 0; font-weight: bold;">CONTABILIDAD GUBERNAMENTAL</p>
+            </div>
+        </div>
+      
+        <!-- Línea separadora -->
+        <hr style="margin: 2rem 0; border-color: #ccc;">
+      
+        <!-- Redes sociales -->
+        <div style="text-align: left; display: flex; gap: 1rem; align-items: center;">
+            <a href="https://www.facebook.com/centrodelasartesslp" style="color: white;"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com/CEARTSLP?t=otgBDAtdP4kz84egwV0cIQ&s=08" style="color: white;"><i class="fab fa-twitter"></i></a>
+            <a href="https://youtube.com/@centroartesslp?si=-kg-VfVMv4uSvm1i" style="color: white;"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/ceart_sanluis?igsh=MWs2cnZtNjBjZHdqMA==" style="color: white;"><i class="fab fa-instagram"></i></a>
+        </div>
+      
+        <!-- Copyright -->
+        <p style="text-align: right; margin-top: 1rem;">©2024 Ceart S.L.P.</p>
+      </footer>
+    <script>
+        // Carrusel mejorado
+        let currentImage = 0;
+        const images = document.querySelectorAll(".carousel-img");
+        let carouselInterval;
+
+        function showImage(index) {
+            images.forEach((img, i) => {
+                img.style.opacity = i === index ? 1 : 0;
+                img.style.zIndex = i === index ? 1 : 0;
+            });
+        }
+
+        function changeImage(direction) {
+            currentImage = (currentImage + direction + images.length) % images.length;
+            showImage(currentImage);
+            resetInterval();
+        }
+
+        function startInterval() {
+            carouselInterval = setInterval(() => changeImage(1), 5000);
+        }
+
+        function resetInterval() {
+            clearInterval(carouselInterval);
+            startInterval();
+        }
+
+        // Pausar al hacer hover
+        document.querySelector('.carousel').addEventListener('mouseenter', () => {
+            clearInterval(carouselInterval);
+        });
+
+        document.querySelector('.carousel').addEventListener('mouseleave', startInterval);
+
+        // Inicialización
+        showImage(0);
+        startInterval();
+
+        // Menú sticky (solo efecto sticky sin cambiar color)
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            const nav = document.querySelector('nav');
+            
+            if (window.scrollY > header.offsetHeight) {
+                nav.style.padding = '0.5rem 0';
+            } else {
+                nav.style.padding = '0.8rem 0';
+            }
+        });
+    </script>
+    
+</body>
+</html>
